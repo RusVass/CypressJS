@@ -35,8 +35,9 @@ testem.log
 .DS_Store
 Thumbs.db
 package-lock.json
-cypress.env.json
+
 # Cypress
+cypress.env.json
 cypress/videos/
 mochawesome-report
 cypress/result
