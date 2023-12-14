@@ -1,3 +1,4 @@
+
 const { defineConfig } = require("cypress");
 // import { defineConfig } from "cypress";
 
