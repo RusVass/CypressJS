@@ -31,7 +31,9 @@
     "mochawesome-report-generator": "^6.2.0",
     "prettier": "^3.1.1",
     "sass": "^1.53.0",
-    "start-server-and-test": "^2.0.3"
+    "start-server-and-test": "^2.0.3",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+
   }
 }
 

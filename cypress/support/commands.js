@@ -23,3 +23,17 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+
+
+Cypress.Commands.add('loginViaAPI', (email, password) => {
+  const userAndPass = `${Cypress.env('siteAuthUserName')}:${Cypress.env('siteAuthPassword')}`
+
+  cy.request('POST', 'https://qauto.forstudy.space/api/auth/signin', {
+    "email": email,
+    "password": password,
+    "remember": false
+  })
+  cy.visit(`https://${userAndPass}@qauto.forstudy.space/`)
+})
