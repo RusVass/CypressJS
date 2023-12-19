@@ -11,9 +11,15 @@ And('opened the Profile page', () => {
 })
 
 When('User updates the profile Photo on the Edit Profile modal', () => {
+  cy.get("button.btn-primary").click()
+  cy.get('input#editProfilePhoto').selectFile("cypress/fixtures/logo.jpg")
+  cy.contains("button", "Save")
   cy.log('log from when')
 })
 
 Then('the profile image is updated', () => {
-  cy.log('log from then')
+  cy.request("https://qauto.forstudy.space/api/users/profile").then((response) => {
+    expect(response.status).to.eq(200);
+    cy.log('log from then')
+  })
 })

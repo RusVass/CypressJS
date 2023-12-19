@@ -1,5 +1,5 @@
 Feature: Add car
-
+// додаємо декілька сценарієв авто
   Scenario Outline: Add a new car into Garage
     Given User is logged in
     And opened the Garage page

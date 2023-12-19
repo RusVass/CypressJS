@@ -35,5 +35,5 @@ Cypress.Commands.add('loginViaAPI', (email, password) => {
     "password": password,
     "remember": false
   })
-  cy.visit(`https://${userAndPass}@qauto.forstudy.space/`)
+  // cy.visit(`https://${userAndPass}@qauto.forstudy.space/`)
 })

@@ -11,9 +11,14 @@ And('opened the Garage page', () => {
 })
 
 When('User adds a new {string} car into Garage', (car) => {
-  cy.log(car)
+  cy.contains('Add car').click()
+  cy.get('#addCarBrand').select(car)
+  cy.get('#addCarMileage').type(100)
+  cy.contains('.modal-content button', 'Add').click()
+ // cy.log(car)
 })
 
 Then('the {string} car appears in the list', (car) => {
-  cy.log(car)
+  cy.get('.car_name').eq(0).should('contain', car)
+ // cy.log(car)
 })

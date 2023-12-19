@@ -1,5 +1,5 @@
 Feature: Add car
-
+// створюємо окремий сценарій для кожного тесту
   Scenario: Add a new car into Garage without examples
     Given User is logged in
     And opened the Garage page

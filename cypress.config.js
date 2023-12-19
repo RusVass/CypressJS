@@ -1,5 +1,6 @@
 const { defineConfig } = require("cypress");
-// import { defineConfig } from "cypress";
+//import  {defineConfig } from "cypress";
+
  const cucumber = require("cypress-cucumber-preprocessor").default
 
 module.exports = defineConfig({
@@ -10,6 +11,8 @@ module.exports = defineConfig({
     html: false,
     json: true,
   },
+
+  // для того щоб працював "cypress-cucumber-preprocessor" додаємо в  e2e: { on("file:preprocessor", cucumber());
   e2e: {
     setupNodeEvents(on, config) {
       on("file:preprocessor", cucumber());

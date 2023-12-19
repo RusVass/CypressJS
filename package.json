@@ -33,7 +33,7 @@
     "sass": "^1.53.0",
     "start-server-and-test": "^2.0.3",
     "cypress-cucumber-preprocessor": "^4.3.1"
-
   }
+
 }
 
