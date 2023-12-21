@@ -1,0 +1,12 @@
+name: CypressJS e2e tests
+on: workflow_dispatch
+jobs:
+cypress_run:
+runs-on: ubuntu-latest
+steps:
+- name: get project files
+uses: actions/checkout@v4
+-name: install all dependencies
+run: npm install
+- name: run tests
+run: npm run cy:run
