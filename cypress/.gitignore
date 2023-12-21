@@ -35,10 +35,12 @@ testem.log
 .DS_Store
 Thumbs.db
 package-lock.json
+
 # Cypress
+cypress.env.json
 cypress/videos/
 mochawesome-report
 cypress/result
 cypress/merged-report
 cypress/screenshots/
-cypress.env.json
+
