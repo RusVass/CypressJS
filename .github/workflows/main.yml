@@ -3,7 +3,7 @@ on: workflow_dispatch
 
 jobs:
   cypress_run:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Get project files
         uses: actions/checkout@v4
