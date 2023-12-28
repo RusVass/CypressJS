@@ -1,6 +1,7 @@
 name: End-to-end tests
 on: push
 jobs:
+
   cypress_run1:
     runs-on: ubuntu-latest
     steps:
