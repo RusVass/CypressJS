@@ -1,0 +1,12 @@
+name: End-to-end tests
+on: push
+jobs:
+  cypress_run1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get project files
+        uses: actions/checkout@v4
+      - name: Install all dependencies
+        run: npm install
+      - name: Run tests
+        run: npm run cy:run
