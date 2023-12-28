@@ -8,16 +8,17 @@ describe("Photo upload test", () => {
   const editPhoto = new EditPhoto();
 
   it("photo upload check", () => {
-    loginPage.signInSite();
-    loginPage.userLogin(),
-      editPhoto.openProfilePage(),
-      editPhoto.elements.getEditButton().click(),
+    loginPage.signInSite()
+    loginPage.userLogin()
+      editPhoto.openProfilePage()
+      editPhoto.elements.getEditButton().click()
       editPhoto.elements
         .getInputPhoto()
-        .selectFile("cypress/fixtures/logo.jpg"),
-      editPhoto.elements.getSaveButton().click(),
+        .selectFile("cypress/fixtures/logo.jpg")
+      editPhoto.elements.getSaveButton().click()
+     /* cy.matchImageSnapshot()*/
       editPhoto.getUploadPhoto().then((response) => {
-        expect(response.status).to.eq(200);
+        expect(response.status).to.eq(200)
       });
   });
 });
