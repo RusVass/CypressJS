@@ -1,24 +1,11 @@
-name: Cypress run
-on:
-  workflow_dispatch:
-env:
-  CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
+name: Chrome headed
+on: push
 jobs:
-  cypress:
-    runs-on: ubuntu-latest
+  cypress-run:
+    runs-on: ubuntu-22.04
     steps:
-      - name: Get project code
-        uses: actions/checkout@v4
-      - name: Install dependencies
-        run: npm i --force
-      - name: Run server and test
-        run: npm run cy:run:server
-      - name: Create report
-        if: success() || failure()
-        run: npm run report:all
-      - name: Upload report
-        if: always()
-        uses: actions/upload-artifact@v3
+      - uses: actions/checkout@v4
+      - uses: cypress-io/github-action@v6
         with:
-          name: test-report
-          path: mochawesome-report/
+          browser: chrome
+          headed: true
