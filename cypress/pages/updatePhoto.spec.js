@@ -1,4 +1,5 @@
 export class EditPhoto {
+
   elements = {
     getEditButton: () => cy.get("button.btn-primary"),
     getInputPhoto: () => cy.get("input#editProfilePhoto"),
