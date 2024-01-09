@@ -1,0 +1,31 @@
+name: Hillel Auto e2e tests
+on: workflow_dispatch
+
+env:
+  # For recording and parallelization to work you must set your CYPRESS_RECORD_KEY
+  # in GitHub repo → Settings → Secrets → Actions
+  CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY}}
+  CYPRESS_siteAuthUserName: ${{secrets.SITEAUTHUSERNAME}}
+  CYPRESS_siteAuthPassword: ${{secrets.SITEAUTHPASSWORD}}
+  CYPRESS_user: ${{secrets.USER}}
+  CYPRESS_password: ${{secrets.PASSWORD}}
+
+jobs:
+  cypress_run1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get project files
+        uses: actions/checkout@v4
+      - name: Install all dependencies
+        run: npm install
+      - name: Run tests
+        run: npm run cy:run
+  cypress_run2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get project files
+        uses: actions/checkout@v4
+      - name: Install all dependencies
+        run: npm install
+      - name: Run tests
+        run: npm run cy:run
