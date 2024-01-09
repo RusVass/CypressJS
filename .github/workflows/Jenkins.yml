@@ -1,5 +1,5 @@
 name: Hillel Auto e2e tests
-on: workflow_dispatch
+on: push
 
 env:
   # For recording and parallelization to work you must set your CYPRESS_RECORD_KEY
@@ -11,16 +11,7 @@ env:
   CYPRESS_password: ${{secrets.PASSWORD}}
 
 jobs:
-  cypress_run1:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get project files
-        uses: actions/checkout@v4
-      - name: Install all dependencies
-        run: npm install
-      - name: Run tests
-        run: npm run cy:run
-  cypress_run2:
+  cypress:
     runs-on: ubuntu-latest
     steps:
       - name: Get project files
