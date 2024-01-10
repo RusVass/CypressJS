@@ -17,11 +17,10 @@ pipeline{
         }
         stage('Run tests') {
           steps{
-            sh ' --env"siteAuthUserName": "guest",
-                  --env "siteAuthUserPassword": "welcome2qauto",
-                   --env"user": "r_vasilyev@ukr.net",
-                   --env"password": "12345qwerTY"
-
+            sh ' --env "siteAuthUserName": "guest"
+                  --env "siteAuthUserPassword": "welcome2qauto"
+                   --env "user": "r_vasilyev@ukr.net"
+                   --env "password": "12345qwerTY"
             npm run cy:run'
           }
         }
