@@ -17,7 +17,7 @@ pipeline{
         }
         stage('Run tests') {
           steps{
-            sh '--env siteAuthUserName="guest"
+            sh ' siteAuthUserName="guest"
                         siteAuthUserPassword="welcome2qauto"
                         user="r_vasilyev@ukr.net"
                         password="12345qwerTY"
